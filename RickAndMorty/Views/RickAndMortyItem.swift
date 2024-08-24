@@ -8,28 +8,54 @@
 import SwiftUI
 
 struct RickAndMortyItem: View {
-    var character : Character
+    let character: Character
+    @State private var isPressed = false
+   
     var body: some View {
-        VStack(alignment:.center) {
-            AsyncImage(url: URL(string: character.image)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-            } placeholder: {
-                ProgressView()
+        VStack {
+            AsyncImage(url: URL(string: character.image)) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 100, height: 100)
+                        .background(Color.gray.opacity(0.2))
+                        .clipShape(Circle())
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .transition(.scale.combined(with: .opacity))
+                        .animation(.easeInOut(duration: 0.3), value: UUID())
+                case .failure:
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.gray)
+                        .background(Color.gray.opacity(0.2))
+                        .clipShape(Circle())
+                @unknown default:
+                    EmptyView()
+                }
             }
             Text(character.name)
-                .font(.headline).bold()
+                .font(.headline)
                 .lineLimit(1)
+                .foregroundColor(.primary)
             Text(character.species)
                 .font(.subheadline)
                 .lineLimit(1)
-        }.frame(width: 150,height: 200)
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(10)
+                .foregroundColor(.secondary)
+            StatusView(status: character.status)
+        }
+        .frame(width: 150, height: 200)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
+      
+        .cornerRadius(15)
+        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
     }
 }
 
