@@ -23,6 +23,10 @@
 		CF422F412C79DD0E0099BAA8 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F402C79DD0E0099BAA8 /* CharacterDetailViewModel.swift */; };
 		CF422F432C79E0DC0099BAA8 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F422C79E0DC0099BAA8 /* StatusView.swift */; };
 		CF422F462C79F3020099BAA8 /* FormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F452C79F3020099BAA8 /* FormattedDate.swift */; };
+		CF422F4A2C7E05B60099BAA8 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F492C7E05B60099BAA8 /* Favorite.swift */; };
+		CF422F4C2C7E06020099BAA8 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F4B2C7E06020099BAA8 /* FavoriteService.swift */; };
+		CF422F4E2C7E1FB30099BAA8 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F4D2C7E1FB30099BAA8 /* FavoritesView.swift */; };
+		CF422F502C7E1FE70099BAA8 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F4F2C7E1FE70099BAA8 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		CF422F402C79DD0E0099BAA8 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		CF422F422C79E0DC0099BAA8 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		CF422F452C79F3020099BAA8 /* FormattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDate.swift; sourceTree = "<group>"; };
+		CF422F492C7E05B60099BAA8 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		CF422F4B2C7E06020099BAA8 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		CF422F4D2C7E1FB30099BAA8 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CF422F4F2C7E1FE70099BAA8 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 				CF422F3C2C79DB760099BAA8 /* SearchBar.swift */,
 				CF422F3E2C79DCFD0099BAA8 /* CharacterDetailView.swift */,
 				CF422F422C79E0DC0099BAA8 /* StatusView.swift */,
+				CF422F4D2C7E1FB30099BAA8 /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +121,7 @@
 			children = (
 				CF422F332C6FFCDD0099BAA8 /* RickAndMortyViewModel.swift */,
 				CF422F402C79DD0E0099BAA8 /* CharacterDetailViewModel.swift */,
+				CF422F4F2C7E1FE70099BAA8 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 			children = (
 				CF422F2E2C6FF7E80099BAA8 /* RickAndMortyService.swift */,
 				CF422F3A2C79D3210099BAA8 /* CharacterError.swift */,
+				CF422F4B2C7E06020099BAA8 /* FavoriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 			children = (
 				CF422F312C6FF9000099BAA8 /* Character.swift */,
 				CF422F372C79D2120099BAA8 /* CharacterResponseDTO.swift */,
+				CF422F492C7E05B60099BAA8 /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,15 +231,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF422F1D2C6FF6950099BAA8 /* RickAndMortyView.swift in Sources */,
+				CF422F4A2C7E05B60099BAA8 /* Favorite.swift in Sources */,
 				CF422F362C700BCD0099BAA8 /* RickAndMortyItem.swift in Sources */,
 				CF422F432C79E0DC0099BAA8 /* StatusView.swift in Sources */,
+				CF422F4C2C7E06020099BAA8 /* FavoriteService.swift in Sources */,
 				CF422F1B2C6FF6950099BAA8 /* RickAndMortyApp.swift in Sources */,
 				CF422F462C79F3020099BAA8 /* FormattedDate.swift in Sources */,
+				CF422F502C7E1FE70099BAA8 /* FavoritesViewModel.swift in Sources */,
 				CF422F382C79D2120099BAA8 /* CharacterResponseDTO.swift in Sources */,
 				CF422F322C6FF9000099BAA8 /* Character.swift in Sources */,
 				CF422F3F2C79DCFD0099BAA8 /* CharacterDetailView.swift in Sources */,
 				CF422F412C79DD0E0099BAA8 /* CharacterDetailViewModel.swift in Sources */,
 				CF422F342C6FFCDD0099BAA8 /* RickAndMortyViewModel.swift in Sources */,
+				CF422F4E2C7E1FB30099BAA8 /* FavoritesView.swift in Sources */,
 				CF422F3B2C79D3210099BAA8 /* CharacterError.swift in Sources */,
 				CF422F2F2C6FF7E80099BAA8 /* RickAndMortyService.swift in Sources */,
 				CF422F3D2C79DB760099BAA8 /* SearchBar.swift in Sources */,
@@ -372,6 +388,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,6 +418,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

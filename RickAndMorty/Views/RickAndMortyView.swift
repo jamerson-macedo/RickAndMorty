@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct RickAndMortyView: View {
     // pra não perder a referencia e ser recriado é melhor usar o StateObject
     // se p viewmodel fosse passado como parametro para a lista ai sim usaria o Observed
     @StateObject var viewmodel : RickAndMortyViewModel
     @State private var searchText = ""
-    
+    @Environment(\.modelContext) var modelContext
     let gridItems = [GridItem(.flexible()),GridItem(.flexible())]
+    
+   @State var showFavorites : Bool =  false
     var filteredCharacters : [Character]{
         if searchText.isEmpty{
             return viewmodel.characters
@@ -29,7 +31,7 @@ struct RickAndMortyView: View {
                     LazyVGrid(columns: gridItems, spacing: 20) {
                         ForEach(filteredCharacters) { character in
                             NavigationLink(
-                                destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character)),
+                                destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character, context: modelContext)),
                                 label: {
                                     RickAndMortyItem(character: character)
                                         .frame(width: 150, height: 200)
@@ -50,6 +52,18 @@ struct RickAndMortyView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewmodel.fetchCharacters()
+            }
+            .fullScreenCover(isPresented: $showFavorites){
+                FavoritesView()
+            }
+            .toolbar{
+                ToolbarItem{
+                    Button(action: {
+                        showFavorites.toggle()
+                    }, label: {
+                        Text("Favoritos")
+                    })
+                }
             }
         }
     }

@@ -7,10 +7,11 @@
 
 // CharacterDetailView.swift
 import SwiftUI
+import SwiftData
 
 struct CharacterDetailView: View {
     @ObservedObject var viewModel: CharacterDetailViewModel
-    
+    @Environment (\.modelContext) private var modelContext
     var body: some View {
         ZStack {
             // Fundo gradiente cobrindo toda a tela
@@ -90,20 +91,27 @@ struct CharacterDetailView: View {
                     }
                     .padding(.horizontal)
                     .padding(.bottom, 20)
+                    Button(action: {
+                        viewModel.toggleFavorite(context: modelContext)
+                    }) {
+                        HStack {
+                            Image(systemName: viewModel.isFavorite ? "star.fill" : "star")
+                                .foregroundColor(viewModel.isFavorite ? .yellow : .white)
+                            Text(viewModel.isFavorite ? "Remover dos Favoritos" : "Adicionar aos Favoritos")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.7)))
+                    }
+                    .padding()
+                }
                 }
             }
-        }
+        
         .navigationBarTitleDisplayMode(.inline)
         
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text(viewModel.character.name)
-                    .font(.headline)
-                    .foregroundColor(.black)  // Garante que o título esteja sempre visível
-            }
-        }
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
-       
+        
     }
     
     // Cor do status
@@ -172,6 +180,6 @@ struct InfoCard: View {
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
     }
 }
-#Preview {
-    CharacterDetailView(viewModel: CharacterDetailViewModel(character: Character(id: 1, name: "jamerson", status: "live", species: "global", type: "ola", gender: "men", origin: Origin(name: "terra", url: ""), location: Location(name: "brasil", url: ""), image: "", episode: [], url: "", created: "32")))
-}
+
+
+

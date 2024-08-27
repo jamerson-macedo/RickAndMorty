@@ -1,7 +1,15 @@
-// Character.swift
+//
+//  CharacterResponse.swift
+//  RickAndMorty
+//
+//  Created by Jamerson Macedo on 16/08/24.
+//
+
 import Foundation
 
-struct Character: Identifiable {
+// MARK: - Character Model
+
+struct Character: Identifiable, Decodable {
     let id: Int
     let name: String
     let status: String
@@ -16,12 +24,28 @@ struct Character: Identifiable {
     let created: String
 }
 
-struct Origin {
+// MARK: - Origin Model
+struct Origin: Decodable {
     let name: String
     let url: String
 }
 
-struct Location {
+// MARK: - Location Model
+struct Location: Decodable {
     let name: String
     let url: String
+}
+
+// MARK: - CharacterResponse Model
+struct CharacterResponse: Decodable {
+    let info: Info
+    let results: [Character]
+}
+
+// MARK: - Info Model for Pagination
+struct Info: Decodable {
+    let count: Int
+    let pages: Int
+    let next: String?
+    let prev: String?
 }
