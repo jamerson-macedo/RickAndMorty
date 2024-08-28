@@ -12,7 +12,7 @@ class CharacterDetailViewModel : ObservableObject{
     
     @Published var character : Character
     private var favoriteService = FavoriteService()
-   @Published var isFavorite : Bool = false
+    @Published var isFavorite : Bool = false
     init(character: Character,context :ModelContext) {
         self.character = character
         self.isFavorite = favoriteService.isFavorite(characterId: character.id,context: context)

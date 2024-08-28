@@ -11,7 +11,6 @@
 		CF422F1D2C6FF6950099BAA8 /* RickAndMortyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F1C2C6FF6950099BAA8 /* RickAndMortyView.swift */; };
 		CF422F1F2C6FF6960099BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF422F1E2C6FF6960099BAA8 /* Assets.xcassets */; };
 		CF422F222C6FF6960099BAA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF422F212C6FF6960099BAA8 /* Preview Assets.xcassets */; };
-		CF422F2A2C6FF7830099BAA8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CF422F292C6FF7830099BAA8 /* Alamofire */; };
 		CF422F2F2C6FF7E80099BAA8 /* RickAndMortyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F2E2C6FF7E80099BAA8 /* RickAndMortyService.swift */; };
 		CF422F322C6FF9000099BAA8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F312C6FF9000099BAA8 /* Character.swift */; };
 		CF422F342C6FFCDD0099BAA8 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF422F332C6FFCDD0099BAA8 /* RickAndMortyViewModel.swift */; };
@@ -57,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF422F2A2C6FF7830099BAA8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +169,6 @@
 			);
 			name = RickAndMorty;
 			packageProductDependencies = (
-				CF422F292C6FF7830099BAA8 /* Alamofire */,
 			);
 			productName = RickAndMorty;
 			productReference = CF422F172C6FF6950099BAA8 /* RickAndMorty.app */;
@@ -202,7 +199,6 @@
 			);
 			mainGroup = CF422F0E2C6FF6950099BAA8;
 			packageReferences = (
-				CF422F282C6FF7830099BAA8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CF422F182C6FF6950099BAA8 /* Products */;
 			projectDirPath = "";
@@ -454,25 +450,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CF422F282C6FF7830099BAA8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CF422F292C6FF7830099BAA8 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF422F282C6FF7830099BAA8 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF422F0F2C6FF6950099BAA8 /* Project object */;
 }

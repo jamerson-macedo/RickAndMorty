@@ -19,8 +19,9 @@ struct RickAndMortyApp: App {
 //            }
 //        }
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appdelegate
+    // fazendo a ponte entre swiftui e uikit
     init(){
-        requestNotificationPermission()
+        requestNotificationPermission() // solicita a permissão
     }
     var body: some Scene {
         WindowGroup {
@@ -29,6 +30,7 @@ struct RickAndMortyApp: App {
         }
     }
     private func requestNotificationPermission(){
+        // .alert e os demais são os tipos de eprmissoes
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]){ granted, error in
             if let error = error {
                 print(error.localizedDescription)
